@@ -36,14 +36,23 @@ Please refer to the paper for details. You are more than welcome to use the code
 If you use this code for your research, please cite our paper. Thank you!
 
 @ARTICLE{9477152,
+
   author={Sun, Yuli and Lei, Lin and Guan, Dongdong and Kuang, Gangyao},
+  
   journal={IEEE Transactions on Image Processing}, 
+  
   title={Iterative Robust Graph for Unsupervised Change Detection of Heterogeneous Remote Sensing Images}, 
+  
   year={2021},
+  
   volume={30},
+  
   number={},
+  
   pages={6277-6291},
+  
   doi={10.1109/TIP.2021.3093766}}
+  
 
 ## Q & A
 
