@@ -1,8 +1,8 @@
 # IRG-McS
-Iterative Robust Graph for Unsupervised Change Detection of Heterogeneous Remote Sensing Images
+MATLAB Code for Iterative Robust Graph for Unsupervised Change Detection of Heterogeneous Remote Sensing Images
 
 ## Introduction
-Code: IRG-McS - 2021
+MATLAB Code: IRG-McS - 2021
 This is a test program for the Iterative Robust Graph and Markovian co-Segmentation method (IRG-McS) for heterogeneous change detection.
 
 IRG-McS is an improved version of our previous work of NPSG (https://github.com/yulisun/NPSG) and INLPG (https://github.com/yulisun/INLPG).
