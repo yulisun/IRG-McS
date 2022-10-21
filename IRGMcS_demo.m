@@ -5,10 +5,10 @@ This is a test program for the Iterative Robust Graph and Markovian co-Segmentat
 
 IRG-McS is an improved version of our previous work of NPSG (https://github.com/yulisun/NPSG) and INLPG (https://github.com/yulisun/INLPG).
 
-NPSG£º Sun, Yuli, et al."Nonlocal patch similarity based heterogeneous
+NPSGÂ£Âº Sun, Yuli, et al."Nonlocal patch similarity based heterogeneous
 remote sensing change detection. Pattern Recognition," 2021, 109, 107598.
 
-INLPG£º Sun, Yuli, et al. "Structure Consistency based Graph for Unsupervised
+INLPGÂ£Âº Sun, Yuli, et al. "Structure Consistency based Graph for Unsupervised
 Change Detection with Homogeneous and Heterogeneous Remote Sensing Images."
 IEEE Transactions on Geoscience and Remote Sensing, Early Access, 2021,
 doi:10.1109/TGRS.2021.3053571.
@@ -27,9 +27,8 @@ doi:10.1109/TIP.2021.3093766.
 clc
 clear;
 close all
-addpath('auxi_funcs')
+addpath(genpath(pwd))
 %% load dataset
-addpath('datasets')
 % #2-Img7, #3-Img17, and #5-Img5 can be found at Professor Max Mignotte's webpage (http://www-labs.iro.umontreal.ca/~mignotte/) and they are associated with this paper https://doi.org/10.1109/TGRS.2020.2986239.
 % #6-California is download from Dr. Luigi Tommaso Luppino's webpage (https://sites.google.com/view/luppino/data) and it was downsampled to 875*500 as shown in our paper.
 % For other datasets, we recommend a similar pre-processing as in "Load_dataset"
