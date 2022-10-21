@@ -23,11 +23,15 @@ Please refer to the paper for details. You are more than welcome to use the code
 
 ===================================================
 
-## Available datasets
+## Available datasets and Graph Cut algorithm
 
 #2-Img7, #3-Img17, and #5-Img5 can be found at Professor Max Mignotte's webpage (http://www-labs.iro.umontreal.ca/~mignotte/) and they are associated with this paper https://doi.org/10.1109/TGRS.2020.2986239.
 
 #6-California can be download from Dr. Luigi Tommaso Luppino's webpage (https://sites.google.com/view/luppino/data) and it is associated with this paper https://doi.org/10.1109/TGRS.2019.2930348.
+
+The graphCut algorithm is download from Professor Anton Osokin's webpage at https://github.com/aosokin/graphCutMex_BoykovKolmogorov.
+
+If you use these resources, please cite their relevant papers.
 
 ===================================================
 
@@ -45,6 +49,8 @@ If you use this code for your research, please cite our paper. Thank you!
   pages={6277-6291},  
   doi={10.1109/TIP.2021.3093766}}  
 
-## Q & A
+## Running
 
-If you have any queries, please do not hesitate to contact me (sunyuli@mail.ustc.edu.cn ).
+Unzip the Zip files (GC) and run the IRG-McS demo file (tested in Matlab 2016a)! 
+
+If you have any queries, please do not hesitate to contact me (sunyuli@mail.ustc.edu.cn).
