@@ -109,6 +109,11 @@ fprintf('\n');fprintf('The total computational time of IRG-McS (t_total) is %i \
 fprintf(['\n' '====================================================================== ' '\n'])
 fprintf(['\n Displaying the results...... ' '\n'])
 %--------------------- DI----------------------%
+figure;
+for iter = 1:opt.Niter
+    subplot(2,floor(opt.Niter/2),iter);imshow(CM_map_result(:,:,iter),[]),title(['CM of the' num2str(iter) '-th iteration'])
+end
+drawnow
 n=500;
 Ref_gt = Ref_gt/max(Ref_gt(:));
 for iter = 1:opt.Niter
@@ -143,10 +148,7 @@ for iter = 1:opt.Niter
     F1(iter) = 2*tp/(2*tp+fp+fn);
 end
 Pcc_kappa_F1 = [pcc;kappa;F1]
-figure;
-for iter = 1:opt.Niter
-    subplot(2,floor(opt.Niter/2),iter);imshow(CM_map_result(:,:,iter),[]),title(['CM of the' num2str(iter) '-th iteration'])
-end
+
 %% 
 if F1(iter) < 0.3
    fprintf('\n');disp('Please check the opt.type of input images and select the appropriate opt.lambda for IRG-McS!')
