@@ -39,7 +39,7 @@ If you use these resources, please cite their relevant papers.
 
 If you use this code for your research, please cite our paper. Thank you!
 
-@ARTICLE{9477152,
+@ARTICLE{9477152,  
   author={Sun, Yuli and Lei, Lin and Guan, Dongdong and Kuang, Gangyao},  
   journal={IEEE Transactions on Image Processing},   
   title={Iterative Robust Graph for Unsupervised Change Detection of Heterogeneous Remote Sensing Images},   
