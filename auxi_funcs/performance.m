@@ -1,44 +1,27 @@
-function [tp,fp,tn,fn,fplv,fnlv,abfplv,abfnlv,pcc,kappa,imw]=performance(imf,im3)
-%æ€§èƒ½æŒ‡æ ‡è¯„ä¼°å‡½æ•°
-%tpï¼šå˜åŒ–æ­£æ£€æ•°ï¼›fpï¼šé”™æ£€æ•°ï¼›tnï¼šæœªå˜åŒ–æ­£æ£€æ•°ï¼›fnï¼šæ¼æ£€æ•°
-%é‡è¦å…¬å¼ï¼štp+fn=Nc; tn+fp=Nu
+function [tp,fp,tn,fn,fplv,fnlv,abfplv,abfnlv,pcc,kappa,imw]=performance(cm,gt)
+%ÐÔÄÜÖ¸±êÆÀ¹Àº¯Êý
+%tp£º±ä»¯Õý¼ìÊý£»fp£º´í¼ìÊý£»tn£ºÎ´±ä»¯Õý¼ìÊý£»fn£ºÂ©¼ìÊý
+%ÖØÒª¹«Ê½£ºtp+fn=Nc; tn+fp=Nu
 
-%im3=double(im3(:,:,3));%ä¼¯å°”å°¼ã€æ¸¥å¤ªåŽæ•°æ®é›†
-im3=double(im3(:,:,1));%é»„æ²³ä¸€å·ã€é»„æ²³äºŒå·æ•°æ®é›†
-imf=double(imf);
-[A,B]=size(im3);N=A*B;
+%im3=double(im3(:,:,3));%²®¶ûÄá¡¢ä×Ì«»ªÊý¾Ý¼¯
+gt=double(gt(:,:,1));%»ÆºÓÒ»ºÅ¡¢»ÆºÓ¶þºÅÊý¾Ý¼¯
+cm=double(cm);
+[A,B]=size(gt);N=A*B;
 Nu=0;Nc=0;
-imw=zeros(A,B);%é”™è¯¯è§‚å¯Ÿå›¾
-for i=1:A
-    for j=1:B
-        if im3(i,j)==0
-            Nu=Nu+1;
-        else
-            Nc=Nc+1;
-        end
-    end
-end
-im=imf-im3;
-fp=0;fn=0;
-for i=1:A
-    for j=1:B
-        if im(i,j)>0
-            fp=fp+1;
-            imw(i,j)=0;%é»‘è‰²ä»£è¡¨é”™æ£€
-        elseif im(i,j)<0
-            fn=fn+1;
-            imw(i,j)=255;%ç™½è‰²ä»£è¡¨æ¼æ£€
-        else
-            imw(i,j)=128;%ç°è‰²ä»£è¡¨æ— é”™è¯¯
-        end
-    end
-end
-imw=uint8(imw);
+imw=zeros(A,B);%´íÎó¹Û²ìÍ¼
+Nu= sum(gt(:)== 0);
+Nc = sum(gt(:)~= 0);
+im = cm-gt;
+fp = sum(im(:)>0);
+fn = sum(im(:)<0);
+tp = Nc-fn;
+tn = Nu-fp;
+
 tp=Nc-fn;tn=Nu-fp;
 fplv=fp/N;fnlv=fn/N;
 abfplv=fp/Nu;abfnlv=fn/Nc;
 pcc=1-fplv-fnlv;
 
-%KAPPAç³»æ•°
+%KAPPAÏµÊý
 pra=(tp+tn)/N;pre=((tp+fp)*(tp+fn)+(fn+tn)*(fp+tn))/(N^2);
 kappa=(pra-pre)/(1-pre);
